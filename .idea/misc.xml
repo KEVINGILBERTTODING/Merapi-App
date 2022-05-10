@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/VolcanoApp/app/src/main/res/drawable/bg_coordinat.xml" value="0.17916666666666667" />
+        <entry key="..\:/VolcanoApp/app/src/main/res/layout/activity_detail.xml" value="0.2" />
         <entry key="..\:/VolcanoApp/app/src/main/res/layout/activity_list_volcano.xml" value="0.23550724637681159" />
         <entry key="..\:/VolcanoApp/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/VolcanoApp/app/src/main/res/layout/list_volcano.xml" value="0.33" />
