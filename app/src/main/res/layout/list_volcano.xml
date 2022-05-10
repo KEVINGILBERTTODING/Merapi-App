@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_5sdp"
+    app:cardBackgroundColor="@color/card"
+    android:outlineAmbientShadowColor="@color/shadow"
+    android:outlineSpotShadowColor="@color/shadow"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gambar_gunung"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@color/mainfont" />
+
+        <TextView
+            android:id="@+id/nama_gunung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gambar_gunung"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/sfbold"
+            android:text="Krakatau"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/bentuk_gunung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nama_gunung"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/popsem"
+            android:text="Krakatau"
+            android:visibility="gone"
+            android:textColor="@color/mainfont"
+            android:textSize="@dimen/_8sdp" />
+
+        <TextView
+            android:id="@+id/tinggi_gunung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bentuk_gunung"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/sfmed"
+            android:text="192m"
+            android:textColor="@color/mainfont"
+            android:textSize="@dimen/_7sdp" />
+
+        <TextView
+            android:id="@+id/est_letusan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/popsem"
+            android:text="Krakatau"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_below="@id/tinggi_gunung"
+            android:textSize="@dimen/_7sdp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/geolokasi_gunung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tinggi_gunung"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_coordinat"
+            android:fontFamily="@font/sfmed"
+            android:padding="@dimen/_5sdp"
+            android:text="Krakatau"
+            android:textColor="@color/pink"
+            android:textSize="@dimen/_6sdp" />
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+
