@@ -1,6 +1,7 @@
 package com.example.volcanoapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.example.volcanoapp.Model.VolcanosModel;
 import com.example.volcanoapp.R;
+import com.example.volcanoapp.VolcanoDetail;
 
 
 import java.lang.reflect.GenericArrayType;
@@ -33,10 +35,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
     public AdapterData(Context context, List<VolcanosModel> items) {
         this.mItems = items;
         this.context = context;
-
     }
-
-    // Inisialisas itemClickListner
 
 
     private ItemClickListener itemClickListener;
@@ -52,6 +51,9 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
 
     @Override
     public void onBindViewHolder(HolderData holder, int position) {
+
+
+
         VolcanosModel md = mItems.get(position);
         holder.tvnmGunung.setText(md.getNama());
         holder.tvBentuk.setText(md.getBentuk());
@@ -88,10 +90,11 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
         mItems = filteredList;
         notifyDataSetChanged();
 
+
     }
 
 
-    class HolderData extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class HolderData extends RecyclerView.ViewHolder {
         TextView tvnmGunung, tvBentuk, tvTinggi, tvEstimasi, tvGeo;
         ImageView imgVolcano;
 
@@ -102,27 +105,48 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
 
             // Inisialisasi textView dan ImageView pada list_volcano.xml
 
-            tvnmGunung          = (TextView) view.findViewById(R.id.nama_gunung);
-            tvBentuk            = (TextView) view.findViewById(R.id.bentuk_gunung);
-            tvTinggi            = (TextView) view.findViewById(R.id.tinggi_gunung);
-            tvEstimasi          = (TextView) view.findViewById(R.id.est_letusan);
-            tvGeo               = (TextView) view.findViewById(R.id.geolokasi_gunung);
-            imgVolcano          = (ImageView) view.findViewById(R.id.gambar_gunung);
+            tvnmGunung = (TextView) view.findViewById(R.id.nama_gunung);
+            tvBentuk = (TextView) view.findViewById(R.id.bentuk_gunung);
+            tvTinggi = (TextView) view.findViewById(R.id.tinggi_gunung);
+            tvEstimasi = (TextView) view.findViewById(R.id.est_letusan);
+            tvGeo = (TextView) view.findViewById(R.id.geolokasi_gunung);
+            imgVolcano = (ImageView) view.findViewById(R.id.gambar_gunung);
+
+//
+//            tvnmGunung.setOnClickListener(this);
+//            imgVolcano.setOnClickListener(this);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent2 = new Intent(context, VolcanoDetail.class);
+
+                    intent2.putExtra("gambar", md.getGambar());
+                    intent2.putExtra("nama_gunung", md.getNama());
+                    intent2.putExtra("bentuk_gunung", md.getBentuk());
+                    intent2.putExtra("tinggi_gunung", md.getTinggi());
+                    intent2.putExtra("estimasi_letusan", md.getEstimasi());
+                    intent2.putExtra("geolokasi", md.getGeolokasi());
+
+                    context.startActivity(intent2);
+                }
 
 
-            // Memanggil object
+            });
 
-            tvnmGunung.setOnClickListener(this);
-            imgVolcano.setOnClickListener(this);
-
-
-        }
-
-        @Override
-        public void onClick(View view) {
-
-            if (itemClickListener != null) itemClickListener.onClick(view, getAdapterPosition());
 
         }
     }
+
+//        @Override
+//        public void onClick(View view) {
+//
+//            if (itemClickListener != null) itemClickListener.onClick(view, getAdapterPosition());
+//
+//        }
+//    }
+
+
+
 }

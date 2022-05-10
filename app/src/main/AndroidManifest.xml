@@ -14,7 +14,7 @@
         android:theme="@style/Theme.VolcanoApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".DetailActivity"
+            android:name=".VolcanoDetail"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

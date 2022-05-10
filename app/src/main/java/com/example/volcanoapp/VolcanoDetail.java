@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-public class DetailActivity extends AppCompatActivity {
+public class VolcanoDetail extends AppCompatActivity {
 
     TextView tvNama, tvBentuk, tvTinggi, tvEstimasi, tvGeo;
     ImageView imgGunung;
@@ -55,7 +55,7 @@ public class DetailActivity extends AppCompatActivity {
 
         // Load ImageView menggunakan Glide
 
-        Glide.with(DetailActivity.this)
+        Glide.with(VolcanoDetail.this)
                 .load(image)
                 .into(imgGunung);
     }

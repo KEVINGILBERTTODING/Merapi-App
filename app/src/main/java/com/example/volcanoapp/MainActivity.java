@@ -1,19 +1,15 @@
 package com.example.volcanoapp;
 
 import android.app.ProgressDialog;
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
@@ -31,7 +27,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements AdapterData.ItemClickListener {
     RecyclerView mRecyclerview;
@@ -110,17 +105,22 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
     private void filter(String newText) {
 
-        List<VolcanosModel> filteredList = new ArrayList<>();
+        ArrayList<VolcanosModel> filteredList = new ArrayList<>();
 
         for (VolcanosModel item : mItems) {
             if (item.getNama().toLowerCase().contains(newText.toLowerCase())) {
                 filteredList.add(item);
+
             }
         }
 
+
         adapterData.filterList(filteredList);
-        mItems.clear();
-        mItems.addAll(filteredList);
+
+//        mItems.clear();
+//        mItems.addAll(filteredList);
+
+
 
 
         if (filteredList.isEmpty()) {
@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 //
 //                return;
             default:
-                Intent intent2 = new Intent(MainActivity.this, DetailActivity.class);
+                Intent intent2 = new Intent(MainActivity.this, VolcanoDetail.class);
                 intent2.putExtra("gambar", volcanosModel.getGambar());
                 intent2.putExtra("nama_gunung", volcanosModel.getNama());
                 intent2.putExtra("bentuk_gunung", volcanosModel.getBentuk());
