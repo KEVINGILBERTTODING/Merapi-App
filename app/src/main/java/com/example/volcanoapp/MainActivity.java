@@ -2,6 +2,7 @@ package com.example.volcanoapp;
 
 import android.app.ProgressDialog;
 import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -32,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterData.ItemClickListener {
     RecyclerView mRecyclerview;
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mManager;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapterData = new AdapterData(MainActivity.this,mItems);
         mRecyclerview.setAdapter(adapterData);
+        adapterData.setClickListener(this);
 
 
         // Inisialisasi searchView
@@ -173,4 +175,48 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+    public void onClick(View view, int position) {
+
+        final VolcanosModel volcanosModel = mItems.get(position);
+        switch (view.getId()) {
+//            case R.id.nama_gunung:
+//                Intent detailVolcano = new Intent(MainActivity.this, DetailActivity.class);
+//                detailVolcano.putExtra("gambar", volcanosModel.getGambar());
+//                detailVolcano.putExtra("nama_gunung", volcanosModel.getNama());
+//                detailVolcano.putExtra("bentuk_gunung", volcanosModel.getBentuk());
+//                detailVolcano.putExtra("tinggi_gunung", volcanosModel.getTinggi());
+//                detailVolcano.putExtra("estimasi_letusan", volcanosModel.getEstimasi());
+//                detailVolcano.putExtra("geolokasi", volcanosModel.getGeolokasi());
+//
+//                startActivity(detailVolcano);
+//
+//                return;
+//
+//            case  R.id.gambar_gunung:
+//                Intent intent1 = new Intent(MainActivity.this, DetailActivity.class);
+//                intent1.putExtra("gambar", volcanosModel.getGambar());
+//                intent1.putExtra("nama_gunung", volcanosModel.getNama());
+//                intent1.putExtra("bentuk_gunung", volcanosModel.getBentuk());
+//                intent1.putExtra("tinggi_gunung", volcanosModel.getTinggi());
+//                intent1.putExtra("estimasi_letusan", volcanosModel.getEstimasi());
+//                intent1.putExtra("geolokasi", volcanosModel.getGeolokasi());
+//
+//                startActivity(intent1);
+//
+//                return;
+            default:
+                Intent intent2 = new Intent(MainActivity.this, DetailActivity.class);
+                intent2.putExtra("gambar", volcanosModel.getGambar());
+                intent2.putExtra("nama_gunung", volcanosModel.getNama());
+                intent2.putExtra("bentuk_gunung", volcanosModel.getBentuk());
+                intent2.putExtra("tinggi_gunung", volcanosModel.getTinggi());
+                intent2.putExtra("estimasi_letusan", volcanosModel.getEstimasi());
+                intent2.putExtra("geolokasi", volcanosModel.getGeolokasi());
+
+                startActivity(intent2);
+
+        }
+
+    }
 }

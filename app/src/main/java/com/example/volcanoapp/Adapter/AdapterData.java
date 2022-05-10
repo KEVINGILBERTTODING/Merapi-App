@@ -20,6 +20,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
+
+    public interface ItemClickListener {
+        void onClick(View view, int position);
+    }
+
+
+
     private List<VolcanosModel> mItems;
     private Context context;
 
@@ -27,6 +34,11 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
         this.mItems = items;
         this.context = context;
     }
+
+    // Inisialisas itemClickListner
+
+
+    private ItemClickListener itemClickListener;
 
 
 
@@ -63,6 +75,10 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
         return mItems.size();
     }
 
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
 
     // Method untuk filterlist
 
@@ -74,8 +90,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
     }
 
 
-
-    class HolderData extends RecyclerView.ViewHolder {
+    class HolderData extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvnmGunung, tvBentuk, tvTinggi, tvEstimasi, tvGeo;
         ImageView imgVolcano;
 
@@ -93,6 +108,19 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
             tvGeo               = (TextView) view.findViewById(R.id.geolokasi_gunung);
             imgVolcano          = (ImageView) view.findViewById(R.id.gambar_gunung);
 
+
+            // Memanggil object
+
+            tvnmGunung.setOnClickListener(this);
+            imgVolcano.setOnClickListener(this);
+
+
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            if (itemClickListener != null) itemClickListener.onClick(view, getAdapterPosition());
 
         }
     }
