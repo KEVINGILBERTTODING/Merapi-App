@@ -39,10 +39,7 @@ public class MainActivity extends AppCompatActivity {
     List<VolcanosModel> mItems;
     ProgressDialog pd;
 
-
-
     AdapterData adapterData;
-
     SearchView searchView;
 
 
@@ -66,7 +63,13 @@ public class MainActivity extends AppCompatActivity {
         pd = new ProgressDialog(MainActivity.this);
         mItems = new ArrayList<>();
 
+
+        // Memanggil method loadJson
+
         loadJson();
+
+
+        // Mengatur agar recycler view terbagi menjadi 2 rows
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
 
@@ -76,8 +79,15 @@ public class MainActivity extends AppCompatActivity {
         adapterData = new AdapterData(MainActivity.this,mItems);
         mRecyclerview.setAdapter(adapterData);
 
+
+        // Inisialisasi searchView
+
         searchView = findViewById(R.id.search_bar);
         searchView.clearFocus();
+
+
+        // Fungsi saat memasukkan kata ke dalam searchview
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String querry) {
@@ -93,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    // Method untuk realtime searchview
 
     private void filter(String newText) {
 
@@ -115,6 +127,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    // Method untuk load data dari API
 
 
     private void loadJson() {
@@ -156,28 +171,6 @@ public class MainActivity extends AppCompatActivity {
 
         AppController.getInstance().addToRequestQueue(reqData);
     }
-
-
-//    private void filterList(String text) {
-//
-//        List<VolcanosModel> filteredList = new ArrayList<>();
-//
-//        for (VolcanosModel volcanosModel : mItems) {
-//            if (volcanosModel.getNama().toLowerCase().contains(text.toLowerCase())) {
-//
-//                filteredList.add(volcanosModel);
-//            }
-//        }
-//
-//        if (filteredList.isEmpty()) {
-//            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
-//        } else {
-//            adapterData.setFilteredList(filteredList);
-//        }
-//
-//
-//
-//    }
 
 
 }

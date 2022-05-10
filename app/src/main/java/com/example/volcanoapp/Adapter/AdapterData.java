@@ -46,11 +46,14 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
         holder.tvEstimasi.setText(md.getEstimasi());
         holder.tvGeo.setText(md.getGeolokasi());
 
-        Glide.with(context) //konteks bisa didapat dari activity yang sedang berjalan
-                .load(mItems.get(position).getGambar()) // mengambildata dengan cara "list.get(position)" mendapatkan isi berupa objek Menu. kemudian "Menu.geturlGambar"
-                .thumbnail(0.5f) // resize gambar menjadi setengahnya
+
+        // Load gambar gunung menggunakan library glide
+
+        Glide.with(context)
+                .load(mItems.get(position).getGambar())
+                .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
-                .into(holder.imgVolcano); // mengisikan ke imageView
+                .into(holder.imgVolcano);
 
         holder.md = md;
     }
@@ -59,6 +62,9 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
     public int getItemCount() {
         return mItems.size();
     }
+
+
+    // Method untuk filterlist
 
     public void filterList(List<VolcanosModel> filteredList) {
 
@@ -77,6 +83,8 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
 
         public HolderData(View view) {
             super(view);
+
+            // Inisialisasi textView dan ImageView pada list_volcano.xml
 
             tvnmGunung          = (TextView) view.findViewById(R.id.nama_gunung);
             tvBentuk            = (TextView) view.findViewById(R.id.bentuk_gunung);
