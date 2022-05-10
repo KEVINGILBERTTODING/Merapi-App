@@ -33,6 +33,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
     public AdapterData(Context context, List<VolcanosModel> items) {
         this.mItems = items;
         this.context = context;
+
     }
 
     // Inisialisas itemClickListner

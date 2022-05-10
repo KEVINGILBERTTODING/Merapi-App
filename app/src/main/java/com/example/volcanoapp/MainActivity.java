@@ -119,6 +119,9 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
         }
 
         adapterData.filterList(filteredList);
+        mItems.clear();
+        mItems.addAll(filteredList);
+
 
         if (filteredList.isEmpty()) {
             Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
