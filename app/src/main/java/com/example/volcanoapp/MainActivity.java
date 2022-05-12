@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +23,7 @@ import com.example.volcanoapp.Utill.ServerAPI;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import androidx.appcompat.widget.SearchView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
     ProgressDialog pd;
 
     AdapterData adapterData;
-    SearchView searchView;
+
 
 
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
         // Inisialisasi searchView
 
-        searchView = findViewById(R.id.search_bar);
+        SearchView searchView = findViewById(R.id.search_bar);
         searchView.clearFocus();
 
 
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
 
         if (filteredList.isEmpty()) {
-            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tidak ditemukan", Toast.LENGTH_SHORT).show();
         } else {
             adapterData.filterList(filteredList);
         }

@@ -36,7 +36,7 @@ public class VolcanoDetail extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        this.image      = intent.getStringExtra("gambar");
+        this.image      =   intent.getStringExtra("gambar");
         this.nama       =   intent.getStringExtra("nama_gunung");
         this.bentuk     =   intent.getStringExtra("bentuk_gunung");
         this.tinggi     =   intent.getStringExtra("tinggi_gunung");

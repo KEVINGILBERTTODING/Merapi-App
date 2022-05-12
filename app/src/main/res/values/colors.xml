@@ -9,11 +9,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#111111</color>
     <color name="shadow">#1C1C1C</color>
-    <color name="card">#3A3A3A</color>
+    <color name="card">#2C2C2E</color>
     <color name="mainfont">#CBCBCB</color>
     <color name="secondfont">#CBCBCB</color>
     <color name="blue">#007AFF</color>
     <color name="pink">#FF2D55</color>
+    <color name="geo">#1C1C1E</color>
+
 
 
 
