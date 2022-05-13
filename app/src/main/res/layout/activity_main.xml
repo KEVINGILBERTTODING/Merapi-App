@@ -17,7 +17,7 @@
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_16sdp"
         android:fontFamily="@font/sfmed"
-        android:text="Selamat datang"
+        android:text="Welcome back"
         android:textColor="@color/mainfont"
         android:textSize="@dimen/_9sdp" />
 
@@ -28,9 +28,10 @@
         android:layout_below="@+id/textView"
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_5sdp"
-        android:fontFamily="@font/sfbold"
-        android:text="Eve Antoinette"
         android:layout_marginBottom="@dimen/_5sdp"
+        android:fontFamily="@font/sfbold"
+        android:maxLength="15"
+        android:text="Muhammad Azhar"
         android:textColor="@color/white"
         android:textSize="@dimen/_15sdp" />
 
@@ -39,22 +40,65 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:maxWidth="@dimen/_120sdp"
-        app:queryHint="Search"
-        app:queryBackground="@drawable/bg_searchview"
         android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginRight="@dimen/_20sdp" />
+        android:layout_marginRight="@dimen/_20sdp"
+        android:background="@drawable/bg_searchview"
+        android:maxWidth="@dimen/_120sdp"
+        app:queryBackground="@drawable/bg_searchview"
+        app:queryHint="Search" />
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recylerVolcano"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/username"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_bar"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_slider_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_105sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorEnabled="true"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="1" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerVolcano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </ScrollView>
+
 
 
 

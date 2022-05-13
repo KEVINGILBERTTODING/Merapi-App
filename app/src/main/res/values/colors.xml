@@ -13,8 +13,13 @@
     <color name="mainfont">#CBCBCB</color>
     <color name="secondfont">#CBCBCB</color>
     <color name="blue">#007AFF</color>
-    <color name="pink">#FF2D55</color>
+    <color name="pink">#F1593D</color>
     <color name="geo">#1C1C1E</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="card2">#38383A</color>
+
+
 
 
 

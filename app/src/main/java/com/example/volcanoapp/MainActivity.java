@@ -2,9 +2,11 @@ package com.example.volcanoapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,9 +18,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.volcanoapp.Adapter.AdapterData;
+import com.example.volcanoapp.Adapter.SliderAdapter;
+import com.example.volcanoapp.Model.SliderItem;
 import com.example.volcanoapp.Model.VolcanosModel;
 import com.example.volcanoapp.Utill.AppController;
 import com.example.volcanoapp.Utill.ServerAPI;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,7 +43,12 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
     List<VolcanosModel> mItems;
     ProgressDialog pd;
 
+
+
     AdapterData adapterData;
+
+    SliderView sliderView;
+    private SliderAdapter adapter;
 
 
 
@@ -52,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+
 
 
 
@@ -75,6 +90,31 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
         adapterData = new AdapterData(MainActivity.this,mItems);
         mRecyclerview.setAdapter(adapterData);
         adapterData.setClickListener(this);
+
+        // Inisialisasi ImageButton kategori obat
+
+        sliderView = findViewById(R.id.imageSlider);
+
+        adapter = new SliderAdapter(this);
+        sliderView.setSliderAdapter(adapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+        sliderView.setIndicatorSelectedColor(Color.WHITE);
+        sliderView.setIndicatorUnselectedColor(Color.GRAY);
+        sliderView.setScrollTimeInSec(3);
+        sliderView.setAutoCycle(true);
+        sliderView.startAutoCycle();
+
+        sliderView.setOnIndicatorClickListener(new DrawController.ClickListener() {
+            @Override
+            public void onIndicatorClicked(int position) {
+                Log.i("GGG", "onIndicatorClicked: " + sliderView.getCurrentPagePosition());
+            }
+        });
+
+        renewItems();
+
 
 
         // Inisialisasi searchView
@@ -175,6 +215,26 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
                 });
 
         AppController.getInstance().addToRequestQueue(reqData);
+    }
+
+
+    // Method untuk menambahkan image pada sliderImage
+
+    public void renewItems() {
+        List<SliderItem> sliderItemList = new ArrayList<>();
+        //dummy data
+        for (int i = 0; i < 2; i++) {
+            SliderItem sliderItem = new SliderItem();
+//            sliderItem.setDescription("Apoteker " + i); // for slider description
+            if (i % 2 == 0) {
+                sliderItem.setImageUrl("https://raw.githubusercontent.com/KEVINGILBERTTODING/.json/master/volcanoes/slider/slider1.png");
+            }
+            else {
+                sliderItem.setImageUrl("https://raw.githubusercontent.com/KEVINGILBERTTODING/.json/master/volcanoes/slider/slider2.png");
+            }
+            sliderItemList.add(sliderItem);
+        }
+        adapter.renewItems(sliderItemList);
     }
 
 
