@@ -33,137 +33,130 @@
         >
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/_16sdp"
-        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp"
+            >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/bg_container"
-
-        >
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
-            android:background="@drawable/btn_back"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-
-
-        <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/bg_container"
+
                 >
 
-            <TextView
-                android:id="@+id/det_nama_gunung"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfbold"
-                android:text="Semeru"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_18sdp" />
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfmed"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:text="Bentuk"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12sdp" />
-
-            <TextView
-                android:id="@+id/det_bentuk_gunung"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfmed"
-                android:text="Stratovulkan"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:background="@drawable/bg_detail"
-                android:padding="@dimen/_5sdp"
-                android:textSize="@dimen/_10sdp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfmed"
-                android:text="Tinggi"
-                android:textColor="@color/white"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:textSize="@dimen/_12sdp" />
-
-            <TextView
-                android:id="@+id/det_tinggi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfmed"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="617 Meter"
-                android:background="@drawable/bg_detail"
-                android:padding="@dimen/_5sdp"
-                android:textSize="@dimen/_10sdp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfmed"
-                android:text="Estimasi letusan terakhir"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12sdp" />
-
-            <TextView
-                android:id="@+id/det_estimasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:background="@drawable/bg_detail"
-                android:padding="@dimen/_5sdp"
-                android:text="12 Juni 2022" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfmed"
-                android:text="Letak geolokasi"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12sdp" />
-
-            <TextView
-                android:id="@+id/det_geo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/bg_detail"
-                android:padding="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="Geolokasi"
-                android:textSize="@dimen/_10sdp" />
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:background="@drawable/btn_back"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
 
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    >
 
+                    <TextView
+                        android:id="@+id/det_nama_gunung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfbold"
+                        android:text="Semeru"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_18sdp" />
 
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfmed"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Bentuk"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/det_bentuk_gunung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfmed"
+                    android:text="Stratovulkan"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_detail"
+                    android:padding="@dimen/_5sdp"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfmed"
+                    android:text="Tinggi"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/det_tinggi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfmed"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="617 Meter"
+                    android:background="@drawable/bg_detail"
+                    android:padding="@dimen/_5sdp"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfmed"
+                    android:text="Estimasi letusan terakhir"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/det_estimasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_detail"
+                    android:padding="@dimen/_5sdp"
+                    android:text="12 Juni 2022" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfmed"
+                    android:text="Letak geolokasi"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/det_geo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/bg_detail"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Geolokasi"
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
-
-    </ScrollView>
-
-    </LinearLayout>
-
-
 
 
 </LinearLayout>

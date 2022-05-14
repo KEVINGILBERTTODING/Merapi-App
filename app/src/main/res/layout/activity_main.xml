@@ -30,7 +30,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginBottom="@dimen/_5sdp"
         android:fontFamily="@font/sfbold"
-        android:maxLength="15"
+        android:maxLength="20"
         android:text="Muhammad Azhar"
         android:textColor="@color/white"
         android:textSize="@dimen/_15sdp" />

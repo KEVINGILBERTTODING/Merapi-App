@@ -63,4 +63,8 @@ dependencies {
 
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
 
+    // Dependencies for loading bar
+
+    implementation 'com.wang.avi:library:2.1.3'
+
 }
