@@ -2,11 +2,13 @@ package com.example.volcanoapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
     SliderView sliderView;
     private SliderAdapter adapter;
 
+    TextView tv_username;
 
 
 
@@ -58,16 +61,11 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         // Fungsi untuk menyembunyikan navbar
 
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
-
-
 
 
         mRecyclerview = (RecyclerView) findViewById(R.id.recylerVolcano);
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
 
-//        mManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
+        // mManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
         mRecyclerview.setLayoutManager(gridLayoutManager);
 
         adapterData = new AdapterData(MainActivity.this,mItems);
@@ -121,6 +119,10 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
         SearchView searchView = findViewById(R.id.search_bar);
         searchView.clearFocus();
+
+        // Inisialisasi textView username
+
+        tv_username = findViewById(R.id.username);
 
 
         // Fungsi saat memasukkan kata ke dalam searchview
@@ -225,7 +227,6 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
         //dummy data
         for (int i = 0; i < 2; i++) {
             SliderItem sliderItem = new SliderItem();
-//            sliderItem.setDescription("Apoteker " + i); // for slider description
             if (i % 2 == 0) {
                 sliderItem.setImageUrl("https://raw.githubusercontent.com/KEVINGILBERTTODING/.json/master/volcanoes/slider/slider1.png");
             }
@@ -239,35 +240,16 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
 
 
+    // Method saat card gunung di klik
+
     public void onClick(View view, int position) {
 
         final VolcanosModel volcanosModel = mItems.get(position);
         switch (view.getId()) {
-//            case R.id.nama_gunung:
-//                Intent detailVolcano = new Intent(MainActivity.this, DetailActivity.class);
-//                detailVolcano.putExtra("gambar", volcanosModel.getGambar());
-//                detailVolcano.putExtra("nama_gunung", volcanosModel.getNama());
-//                detailVolcano.putExtra("bentuk_gunung", volcanosModel.getBentuk());
-//                detailVolcano.putExtra("tinggi_gunung", volcanosModel.getTinggi());
-//                detailVolcano.putExtra("estimasi_letusan", volcanosModel.getEstimasi());
-//                detailVolcano.putExtra("geolokasi", volcanosModel.getGeolokasi());
-//
-//                startActivity(detailVolcano);
-//
-//                return;
-//
-//            case  R.id.gambar_gunung:
-//                Intent intent1 = new Intent(MainActivity.this, DetailActivity.class);
-//                intent1.putExtra("gambar", volcanosModel.getGambar());
-//                intent1.putExtra("nama_gunung", volcanosModel.getNama());
-//                intent1.putExtra("bentuk_gunung", volcanosModel.getBentuk());
-//                intent1.putExtra("tinggi_gunung", volcanosModel.getTinggi());
-//                intent1.putExtra("estimasi_letusan", volcanosModel.getEstimasi());
-//                intent1.putExtra("geolokasi", volcanosModel.getGeolokasi());
-//
-//                startActivity(intent1);
-//
-//                return;
+
+
+            // Mengirim data ke activity_detail menggunakan intent
+
             default:
                 Intent intent2 = new Intent(MainActivity.this, VolcanoDetail.class);
                 intent2.putExtra("gambar", volcanosModel.getGambar());
@@ -279,6 +261,28 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
                 startActivity(intent2);
 
+        }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        checkuserstatus();
+    }
+
+    private void checkuserstatus() {
+
+
+        SharedPreferences sharedPreferences=getSharedPreferences("logindata",MODE_PRIVATE);
+        Boolean counter=sharedPreferences.getBoolean("logincounter",Boolean.valueOf(String.valueOf(MODE_PRIVATE)));
+        String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
+        if (counter){
+            tv_username.setText(username);
+        }
+        else{
+            startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            finish();
         }
 
     }
