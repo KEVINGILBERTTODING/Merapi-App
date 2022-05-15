@@ -1,7 +1,7 @@
 # Merapi
-<h6> Version 1.1 Released date 2022-05-15 </h6>
+<h6> Version 1.1 Released date 2022-05-15</h6>
 
-<h3><b>Merapi</b> merupakan aplikasi android yang menyajikan data informasi seputar gunung berapi di Indonesia, adapun data yang yang disajikan seperti bentuk, tinggi, estimasi letusan terakhir, dan gelolokasi sebuah gunung berapi.</h3>
+<h4><b>Merapi</b> merupakan aplikasi android yang menyajikan data informasi seputar gunung berapi di Indonesia, adapun data yang yang disajikan seperti bentuk, tinggi, estimasi letusan terakhir, dan gelolokasi sebuah gunung berapi.</h4>
 
 <h5>Sumber data: https://github.com/yogski/indonesia-public-static-api#api-gunung-berapi-indonesia-apivolcanoes</h5>
 
