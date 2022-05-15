@@ -191,7 +191,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already have an account?"
+                android:text="Telah memiliki akun?"
                 android:textColor="@color/white"
                 android:fontFamily="@font/popmed"
                 android:textSize="@dimen/_8sdp"/>
@@ -199,7 +199,7 @@
                 android:id="@+id/tv_ToLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Sign In"
+                android:text=" Masuk"
                 android:textStyle="bold"
                 android:fontFamily="@font/popsem"
                 android:textColor="@color/pink"

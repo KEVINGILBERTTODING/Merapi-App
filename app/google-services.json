@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "776778711620",
+    "firebase_url": "https://volcano-app-64ad5-default-rtdb.firebaseio.com",
+    "project_id": "volcano-app-64ad5",
+    "storage_bucket": "volcano-app-64ad5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776778711620:android:44d732f812fcac9f457211",
+        "android_client_info": {
+          "package_name": "com.example.merapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776778711620-gr8mct6v6qvrjupbnqg5msl50p8k7h4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACFscOq9_YPdHUDyzeWkttYSrDmkilT0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776778711620-gr8mct6v6qvrjupbnqg5msl50p8k7h4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
