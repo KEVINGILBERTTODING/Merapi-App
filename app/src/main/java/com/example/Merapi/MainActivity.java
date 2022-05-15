@@ -1,4 +1,4 @@
-package com.example.volcanoapp;
+package com.example.Merapi;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,14 +18,13 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.example.volcanoapp.Adapter.AdapterData;
-import com.example.volcanoapp.Adapter.SliderAdapter;
-import com.example.volcanoapp.Model.SliderItem;
-import com.example.volcanoapp.Model.VolcanosModel;
-import com.example.volcanoapp.Utill.AppController;
-import com.example.volcanoapp.Utill.ServerAPI;
+import com.example.Merapi.Adapter.AdapterData;
+import com.example.Merapi.Adapter.SliderAdapter;
+import com.example.Merapi.Model.SliderItem;
+import com.example.Merapi.Model.VolcanosModel;
+import com.example.Merapi.Utill.AppController;
+import com.example.Merapi.Utill.ServerAPI;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
@@ -104,13 +102,6 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
         sliderView.setAutoCycle(true);
         sliderView.startAutoCycle();
 
-        sliderView.setOnIndicatorClickListener(new DrawController.ClickListener() {
-            @Override
-            public void onIndicatorClicked(int position) {
-                Log.i("GGG", "onIndicatorClicked: " + sliderView.getCurrentPagePosition());
-            }
-        });
-
         renewItems();
 
 
@@ -158,11 +149,6 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
 
         adapterData.filterList(filteredList);
-
-//        mItems.clear();
-//        mItems.addAll(filteredList);
-
-
 
 
         if (filteredList.isEmpty()) {
@@ -271,12 +257,15 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
         checkuserstatus();
     }
 
+
+    // Method cek status user jika user belum login atau session false maka akan auto direct ke LoginActivity
+
     private void checkuserstatus() {
 
 
         SharedPreferences sharedPreferences=getSharedPreferences("logindata",MODE_PRIVATE);
         Boolean counter=sharedPreferences.getBoolean("logincounter",Boolean.valueOf(String.valueOf(MODE_PRIVATE)));
-        String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
+        String username=sharedPreferences.getString("username",String.valueOf(MODE_PRIVATE));
         if (counter){
             tv_username.setText(username);
         }

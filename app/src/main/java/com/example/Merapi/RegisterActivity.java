@@ -1,4 +1,4 @@
-package com.example.volcanoapp;
+package com.example.Merapi;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,12 +28,15 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        final EditText username        = findViewById(R.id.edt_username);
-        final EditText  password        = findViewById(R.id.edt_pass);
-        final EditText  confPassword    = findViewById(R.id.edt_pass_conf);
+        // Inisialisasi editText, button, dan textView
 
-        final Button registerBtn     = findViewById(R.id.button_register);
-        final TextView loginBtn        = findViewById(R.id.tv_ToLogin);
+        final EditText  username            = findViewById(R.id.edt_username);
+        final EditText  password            = findViewById(R.id.edt_pass);
+        final EditText  confPassword        = findViewById(R.id.edt_pass_conf);
+        final Button    registerBtn        = findViewById(R.id.button_register);
+        final TextView  loginBtn            = findViewById(R.id.tv_ToLogin);
+
+        // Fungsi saat button register di klik
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +98,8 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+
+        // Fungsi saat button login di klik
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

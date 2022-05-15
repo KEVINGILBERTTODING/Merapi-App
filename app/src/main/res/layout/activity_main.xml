@@ -17,7 +17,7 @@
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_16sdp"
         android:fontFamily="@font/sfmed"
-        android:text="Welcome back"
+        android:text="Selamat datang"
         android:textColor="@color/mainfont"
         android:textSize="@dimen/_9sdp" />
 

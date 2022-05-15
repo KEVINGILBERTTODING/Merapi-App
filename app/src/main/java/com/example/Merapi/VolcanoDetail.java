@@ -1,4 +1,4 @@
-package com.example.volcanoapp;
+package com.example.Merapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.example.volcanoapp;
+package com.example.Merapi;
 
 import org.junit.Test;
 

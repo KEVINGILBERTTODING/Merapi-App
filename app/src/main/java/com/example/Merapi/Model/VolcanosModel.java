@@ -1,4 +1,4 @@
-package com.example.volcanoapp.Model;
+package com.example.Merapi.Model;
 
 public class VolcanosModel {
 

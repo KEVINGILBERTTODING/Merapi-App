@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Volcano-App/app/src/main/res/layout/activity_detail.xml" value="0.23550724637681159" />
-        <entry key="..\:/Volcano-App/app/src/main/res/layout/activity_login.xml" value="0.23550724637681159" />
-        <entry key="..\:/Volcano-App/app/src/main/res/layout/activity_main.xml" value="0.23550724637681159" />
-        <entry key="..\:/Volcano-App/app/src/main/res/layout/activity_register.xml" value="0.23550724637681159" />
-        <entry key="..\:/Volcano-App/app/src/main/res/layout/activity_splash_screen.xml" value="0.23550724637681159" />
-        <entry key="..\:/Volcano-App/app/src/main/res/layout/image_slider_layout_item.xml" value="0.23550724637681159" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/drawable/bg_container.xml" value="0.3541666666666667" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/drawable/bg_coordinat.xml" value="0.17916666666666667" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/drawable/bg_detail.xml" value="0.18009259259259258" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/drawable/bg_searchview.xml" value="0.19635416666666666" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/layout/activity_detail.xml" value="0.2" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/layout/activity_list_volcano.xml" value="0.23550724637681159" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/layout/activity_main.xml" value="0.5359116022099447" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/layout/image_slider_layout_item.xml" value="0.2617753623188406" />
-        <entry key="..\:/VolcanoApp/app/src/main/res/layout/list_volcano.xml" value="0.33" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

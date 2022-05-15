@@ -1,4 +1,4 @@
-package com.example.volcanoapp.Adapter;
+package com.example.Merapi.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,13 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.example.volcanoapp.Model.VolcanosModel;
-import com.example.volcanoapp.R;
-import com.example.volcanoapp.VolcanoDetail;
+import com.example.Merapi.Model.VolcanosModel;
+import com.example.Merapi.R;
+import com.example.Merapi.VolcanoDetail;
 
 
-import java.lang.reflect.GenericArrayType;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {

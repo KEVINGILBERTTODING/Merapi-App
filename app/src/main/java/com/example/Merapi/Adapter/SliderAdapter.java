@@ -1,4 +1,4 @@
-package com.example.volcanoapp.Adapter;
+package com.example.Merapi.Adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.volcanoapp.Model.SliderItem;
-import com.example.volcanoapp.R;
+import com.example.Merapi.Model.SliderItem;
+import com.example.Merapi.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.ArrayList;

@@ -22,10 +22,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_200sdp"
-                android:layout_gravity="center_vertical"
+                android:background="@drawable/login_icon"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_10sdp"
                 />
 
         </FrameLayout>
@@ -34,7 +36,7 @@
             android:fontFamily="@font/popsem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello, welcome\n to Our App"
+            android:text="Halo, Selamat Datang"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp" />
 
@@ -43,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:text="Create an accout and join with us?"
+            android:text="Buat akun dan bergabunglah dengan kami?"
             android:textColor="@color/white"
             android:textSize="@dimen/_8sdp"/>
 
@@ -143,7 +145,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="By signing up, you’re agree to our"
+                android:text="Dengan mendaftar, Anda setuju dengan kami "
                 android:textColor="@color/white"
                 android:fontFamily="@font/popmed"
                 android:textSize="@dimen/_7sdp"/>
@@ -170,7 +172,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:cornerRadius="@dimen/_10sdp"
-            android:text="Sign Up"
+            android:text="Daftar"
             android:textAllCaps="false"
             android:textSize="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"

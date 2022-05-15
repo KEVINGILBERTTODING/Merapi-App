@@ -1,4 +1,4 @@
-package com.example.volcanoapp;
+package com.example.Merapi;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 if (getPassword.equals(passwordTxt)) {
 
-                                    Toast.makeText(LoginActivity.this, "Berhasil login", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Selamat datang " + usernameTxt, Toast.LENGTH_SHORT).show();
 
 
                                     // Menyimpan login info ke dalam sharedPreferences
@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor=sharedPreferences.edit();
 
                                     editor.putBoolean("logincounter",true);
-                                    editor.putString("useremail",usernameTxt);
+                                    editor.putString("username",usernameTxt);
                                     editor.apply();
                                     finish();
 

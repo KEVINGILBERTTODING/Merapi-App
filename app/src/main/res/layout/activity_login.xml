@@ -25,24 +25,26 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_200sdp"
-                    android:layout_gravity="center_vertical" >
-
-                </RelativeLayout>
-
+                    android:background="@drawable/icon_login"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
 
             </FrameLayout>
+
 
 
             <TextView
                 android:fontFamily="@font/popsem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Welcome back"
+                android:text="Halo, Selamat datang"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp" />
 
@@ -52,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:text="I am happy to see you again. You can continue where you left off by logging  in"
+                android:text="Saya senang melihat Anda lagi. Anda dapat melanjutkan di mana Anda tinggalkan dengan masuk"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_7sdp" />
 
@@ -114,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 app:cornerRadius="@dimen/_10sdp"
-                android:text="Sign In"
+                android:text="Masuk"
                 android:textAllCaps="false"
                 android:textSize="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_20sdp"
@@ -124,7 +126,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OR"
+                android:text="atau"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textSize="@dimen/_8sdp"
@@ -144,14 +146,14 @@
                     android:fontFamily="@font/popmed"
                     android:textSize="@dimen/_8sdp"
                     android:textColor="@color/white"
-                    android:text="Don't have an account?  "/>
+                    android:text="Belum punya akun?  "/>
                 <TextView
                     android:id="@+id/button_signupSignup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Signup"
+                    android:text="Daftar"
                     android:textSize="@dimen/_8sdp"
-                    android:fontFamily="@font/popmed"
+                    android:fontFamily="@font/popsem"
                     android:textColor="@color/pink"
                     android:textStyle="bold"/>
             </LinearLayout>

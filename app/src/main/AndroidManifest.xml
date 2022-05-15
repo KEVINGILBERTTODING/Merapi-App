@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.volcanoapp">
+    package="com.example.Merapi">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".Utill.AppController"
+        android:name="com.example.Merapi.Utill.AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_map"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon_map"
         android:supportsRtl="true"
         android:theme="@style/Theme.VolcanoApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.Merapi.LoginActivity"
+            android:theme="@style/Theme.Login"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.Merapi.RegisterActivity"
+            android:theme="@style/Theme.Login"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.example.Merapi.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,10 +31,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".VolcanoDetail"
+            android:name="com.example.Merapi.VolcanoDetail"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.Merapi.MainActivity"
             android:exported="true" />
     </application>
 

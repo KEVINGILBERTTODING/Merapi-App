@@ -1,4 +1,4 @@
-package com.example.volcanoapp.Utill;
+package com.example.Merapi.Utill;
 
 import android.app.Application;
 import android.text.TextUtils;
