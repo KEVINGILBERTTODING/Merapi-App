@@ -10,7 +10,7 @@ public class VolcanosModel {
     public VolcanosModel(String nama, String bentuk, String tinggi, String estimasi, String geolokasi, String gambar) {
 
         this.nama       =   nama;
-        this.bentuk     =  bentuk;
+        this.bentuk     =   bentuk;
         this.tinggi     =   tinggi;
         this.estimasi   =   estimasi;
         this.geolokasi  =   geolokasi;

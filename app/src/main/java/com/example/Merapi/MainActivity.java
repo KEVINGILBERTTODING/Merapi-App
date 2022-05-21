@@ -32,6 +32,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import androidx.appcompat.widget.SearchView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
     RecyclerView.LayoutManager mManager;
     List<VolcanosModel> mItems;
     ProgressDialog pd;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
 
 
@@ -69,6 +71,16 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
         mRecyclerview = (RecyclerView) findViewById(R.id.recylerVolcano);
         pd = new ProgressDialog(MainActivity.this);
         mItems = new ArrayList<>();
+
+        // Inisisialisasi widget refresh layout
+
+        swipeRefreshLayout  =   findViewById(R.id.swpieRefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+              refreshItem();
+            }
+        });
 
 
         // Memanggil method loadJson
@@ -134,6 +146,10 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
 
     }
 
+    private void refreshItem() {
+        loadJson();
+    }
+
     // Method untuk realtime searchview
 
     private void filter(String newText) {
@@ -187,6 +203,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
                                 md.setGeolokasi(data.getString("geolokasi"));
                                 md.setGambar(data.getString("image"));
                                 mItems.add(md);
+                                swipeRefreshLayout.setRefreshing(false);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -220,6 +237,7 @@ public class MainActivity extends AppCompatActivity implements AdapterData.ItemC
                 sliderItem.setImageUrl("https://raw.githubusercontent.com/KEVINGILBERTTODING/.json/master/volcanoes/slider/slider2.png");
             }
             sliderItemList.add(sliderItem);
+            swipeRefreshLayout.setRefreshing(false);
         }
         adapter.renewItems(sliderItemList);
     }
