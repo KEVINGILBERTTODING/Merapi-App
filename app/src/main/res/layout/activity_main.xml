@@ -47,19 +47,15 @@
         app:queryBackground="@drawable/bg_searchview"
         app:queryHint="Search" />
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swpieRefresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_below="@id/search_bar"
-        >
 
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swpieRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/search_bar"
+                android:layout_marginTop="@dimen/_20sdp">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -105,8 +101,6 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-        </ScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
